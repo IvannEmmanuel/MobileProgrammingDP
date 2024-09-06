@@ -1,8 +1,11 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View, KeyboardAvoidingView, Platform, ScrollView, TouchableOpacity } from 'react-native';
 import { Button, Card, TextInput } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
 
 function LoginScreen() {
+  const navigation = useNavigation();
+
   return (
     <KeyboardAvoidingView
       style={styles.container}
@@ -44,13 +47,17 @@ function LoginScreen() {
               <Text style={styles.signInLabel}> Sign In </Text>
             </Button>
             <View style={styles.accountText}>
-              <Text style = {{textDecorationLine: 'underline'}}>
-                Don't have an account?
-                  <Text style = {styles.signUpLabel}>
-                    {' '}
-                    Sign Up
-                  </Text>
-              </Text>
+              <TouchableOpacity
+                  onPress={() => navigation.navigate('SignUp')}
+                >
+                <Text style = {{textDecorationLine: 'underline'}}>
+                  Don't have an account?
+                    <Text style = {styles.signUpLabel}>
+                      {' '}
+                      Sign Up
+                    </Text>
+                </Text>
+              </TouchableOpacity>
             </View>
           </Card>
         </View>
