@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
         fontSize: 17,
         marginVertical: 10,
         marginHorizontal: 10,
-        fontWeight: '700'
+        fontWeight: '800'
     },
     cardContainer: {
         marginVertical: -40,
